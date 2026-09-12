@@ -24,6 +24,7 @@ import 'package:url_launcher/url_launcher_string.dart';
 
 import '../../common/widgets/dialog.dart';
 import '../../common/widgets/login.dart';
+import '../widgets/server_profile_cards.dart';
 
 const double _kTabWidth = 200;
 const double _kTabHeight = 42;
@@ -483,7 +484,10 @@ class _GeneralState extends State<_General> {
     final incomingOnly = bind.isIncomingOnly();
     final outgoingOnly = bind.isOutgoingOnly();
     final showAutoUpdate = (isWindows && bind.mainIsInstalled()) ||
-    (isMacOS && bind.mainIsInstalled() && bind.mainIsInstalledDaemon(prompt: false) && !bind.isCustomClient());
+        (isMacOS &&
+            bind.mainIsInstalled() &&
+            bind.mainIsInstalledDaemon(prompt: false) &&
+            !bind.isCustomClient());
     final children = <Widget>[
       if (!isWeb && !incomingOnly)
         _OptionCheckBox(context, 'Confirm before closing multiple tabs',
@@ -1858,6 +1862,10 @@ class _NetworkState extends State<_Network> with AutomaticKeepAliveClientMixin {
     return _Card(
       title: 'Network',
       children: [
+        if (!hideServer) ...[
+          const ServerProfilesSettingsSection(),
+          divider,
+        ],
         Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
