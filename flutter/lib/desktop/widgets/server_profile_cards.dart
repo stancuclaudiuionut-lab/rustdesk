@@ -70,7 +70,7 @@ class _ServerProfileSidebarCardsState extends State<ServerProfileSidebarCards> {
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
                   color:
-                      theme.textTheme.titleLarge?.color?.withValues(alpha: 0.8),
+                      theme.textTheme.titleLarge?.color?.withOpacity(0.8),
                 ),
               ),
               Row(
@@ -127,16 +127,16 @@ class _ServerProfileSidebarCardsState extends State<ServerProfileSidebarCards> {
                       decoration: BoxDecoration(
                         color: isActive
                             ? (isDark
-                                ? MyTheme.accent.withValues(alpha: 0.18)
-                                : MyTheme.accent.withValues(alpha: 0.1))
+                                ? MyTheme.accent.withOpacity(0.18)
+                                : MyTheme.accent.withOpacity(0.1))
                             : (isDark
-                                ? Colors.white.withValues(alpha: 0.04)
-                                : Colors.black.withValues(alpha: 0.03)),
+                                ? Colors.white.withOpacity(0.04)
+                                : Colors.black.withOpacity(0.03)),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
                           color: isActive
                               ? MyTheme.accent
-                              : Colors.grey.withValues(alpha: 0.25),
+                              : Colors.grey.withOpacity(0.25),
                           width: isActive ? 1.5 : 1,
                         ),
                       ),
@@ -164,8 +164,7 @@ class _ServerProfileSidebarCardsState extends State<ServerProfileSidebarCards> {
                                       color: statusColor,
                                       boxShadow: [
                                         BoxShadow(
-                                          color: statusColor.withValues(
-                                              alpha: 0.5),
+                                          color: statusColor.withOpacity(0.5),
                                           blurRadius: 4,
                                           spreadRadius: 1,
                                         )
@@ -207,7 +206,7 @@ class _ServerProfileSidebarCardsState extends State<ServerProfileSidebarCards> {
                                           fontSize: 10.5,
                                           color: theme
                                               .textTheme.bodySmall?.color
-                                              ?.withValues(alpha: 0.7),
+                                              ?.withOpacity(0.7),
                                         ),
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
@@ -346,15 +345,15 @@ class ServerProfilesSettingsSection extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       color: isActive
                           ? (isDark
-                              ? MyTheme.accent.withValues(alpha: 0.12)
-                              : MyTheme.accent.withValues(alpha: 0.08))
+                              ? MyTheme.accent.withOpacity(0.12)
+                              : MyTheme.accent.withOpacity(0.08))
                           : (isDark
-                              ? Colors.white.withValues(alpha: 0.03)
-                              : Colors.black.withValues(alpha: 0.02)),
+                              ? Colors.white.withOpacity(0.03)
+                              : Colors.black.withOpacity(0.02)),
                       border: Border.all(
                         color: isActive
                             ? MyTheme.accent
-                            : Colors.grey.withValues(alpha: 0.25),
+                            : Colors.grey.withOpacity(0.25),
                         width: isActive ? 1.5 : 1,
                       ),
                     ),
@@ -371,7 +370,7 @@ class ServerProfilesSettingsSection extends StatelessWidget {
                             color: statusColor,
                             boxShadow: [
                               BoxShadow(
-                                color: statusColor.withValues(alpha: 0.5),
+                                color: statusColor.withOpacity(0.5),
                                 blurRadius: 4,
                                 spreadRadius: 1,
                               )
@@ -431,7 +430,7 @@ class ServerProfilesSettingsSection extends StatelessWidget {
                                 style: TextStyle(
                                   fontSize: 12,
                                   color: theme.textTheme.bodySmall?.color
-                                      ?.withValues(alpha: 0.7),
+                                      ?.withOpacity(0.7),
                                 ),
                               ),
                             ],
