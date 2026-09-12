@@ -69,8 +69,7 @@ class _ServerProfileSidebarCardsState extends State<ServerProfileSidebarCards> {
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.bold,
-                  color:
-                      theme.textTheme.titleLarge?.color?.withOpacity(0.8),
+                  color: theme.textTheme.titleLarge?.color?.withOpacity(0.8),
                 ),
               ),
               Row(
