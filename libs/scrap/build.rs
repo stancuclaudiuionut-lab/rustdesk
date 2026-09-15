@@ -247,7 +247,7 @@ fn main() {
     find_package("libyuv");
     gen_vcpkg_package("libvpx", "vpx_ffi.h", "vpx_ffi.rs", "^[vV].*");
     gen_vcpkg_package("aom", "aom_ffi.h", "aom_ffi.rs", "^(aom|AOM|OBU|AV1).*");
-    if target_os == "macos" {
+    if target_os == "macos" && std::env::var("VCPKG_ROOT").is_err() {
         find_package("libvmaf");
     }
     gen_vcpkg_package("libyuv", "yuv_ffi.h", "yuv_ffi.rs", ".*");
